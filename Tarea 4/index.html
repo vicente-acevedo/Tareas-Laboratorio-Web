@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria disney</title>
+</head>
+<style>
+        .contenedor{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 30px;
+            
+        }
+        .contenido{
+            background-color: black;
+            border-radius: 15px;
+        }
+        #primero{
+            grid-column: 1/3;
+        }
+        #ultimo{
+            grid-column: 2/4;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+            background-color: black;
+            opacity: 15%;
+        }
+        img:hover{
+            scale: 1.02;
+            opacity: 100%;
+        }
+        </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenido" id="primero">
+            <img src="https://media.traveler.es/photos/613777f8bae07f0d8a493e14/master/pass/35835.jpg">
+        </div>
+        <div class="contenido">
+            <img src="https://mexicorutamagica.mx/wp-content/uploads/2020/04/fondo.jpg">
+        </div>
+        <div class="contenido">
+             <img src="https://www.que.es/wp-content/uploads/2024/02/destinos-de-viaje-que-parecen-salidos-de-una-pelicula-de-Disney.jpg">
+        </div>
+        <div class="contenido">
+             <img src="https://lumiere-a.akamaihd.net/v1/images/simple-disney-things-pocahontas-listen-with-your-heart_5bff248a.jpeg">
+        </div>
+        <div class="contenido">
+             <img src="https://s2.ppllstatics.com/elnortedecastilla/www/multimedia/201512/25/media/escenarios-disney/aladdinb--1200x900.jpg">
+        </div>
+        <div class="contenido">
+             <img src="https://content-viajes.nationalgeographic.com.es/medio/2023/09/27/sirenita_44f666f1_230927154750_1200x670.jpg">
+        </div>
+        <div class="contenido" id="ultimo">
+             <img src="https://i0.wp.com/www.rotoscopers.com/wp-content/uploads/2016/09/m2tsnvlps6.jpg">
+        </div>
+    </div>
+</body>
+</html>
