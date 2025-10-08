@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(0, 0, 0);
+        }
+
+        #cuadro{
+            width: 160px;
+            height: 160px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cuadro"></div>
+
+    <script>
+        let sobreCuadro = false;
+        const cuadro = document.getElementById("cuadro");
+
+        cuadro.addEventListener("mouseenter", () => sobreCuadro = true);
+        cuadro.addEventListener("mouseleave", () => sobreCuadro = false);
+
+        cuadro.addEventListener("click", () => {
+            if(sobreCuadro){
+                let r = Math.floor(Math.random() * 256);
+                let g = Math.floor(Math.random() * 256);
+                let b = Math.floor(Math.random() * 256);
+                cuadro.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            }
+        }
+    );
+    </script>
+
+</body>
+</html>
