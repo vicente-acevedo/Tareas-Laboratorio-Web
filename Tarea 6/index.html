@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>coloress</title>
     <style>
         body{
             margin: 0;
@@ -15,11 +15,11 @@
         }
 
         #cuadro{
-            width: 160px;
-            height: 160px;
-            background-color: rgb(255, 255, 255);
-            border-radius: 10px;
-            transition: 0.3s;
+            width: 220px;
+            height: 220px;
+            background-color: rgb(226, 88, 88);
+            border-radius: 8px;
+            transition: 0.2s;
             cursor: pointer;
         }
     </style>
@@ -42,8 +42,7 @@
                 let b = Math.floor(Math.random() * 256);
                 cuadro.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
             }
-        }
-    );
+        });
     </script>
 
 </body>
