@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio – Vicente Acevedo · Diseñador gráfico</title>
+    <style>
+        :root{
+            --color-bg: #f0f0f0;
+            --color-primary: #597cd3;
+            --color-text: #1a1a1a;
+            --color-muted: #777777;
+            --radius-xl: 22px;
+            --radius-xxl: 100px;
+            --shadow-strong: 0 12px 28px rgba(0,0,0,0.18);
+            --shadow-soft: 0 6px 14px rgba(0,0,0,0.12);
+        }
+
+        *{ box-sizing: border-box; }
+
+        html{ scroll-behavior: smooth; }
+
+        body{
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+        }
+
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page{
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        /* PORTADA */
+        header.hero{
+            background-color: var(--color-primary);
+            padding: 70px 0 130px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-window{
+            width: 88%;
+            max-width: 1550px;
+            background: #fff;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-strong);
+            padding: 80px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .hero-bar{
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 34px;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            background-color: var(--color-bg);
+            display: flex;
+            align-items: center;
+            padding-left: 16px;
+            gap: 8px;
+        }
+
+        .hero-dot{
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+        .hero-dot.red{ background-color: #ff5f57; }
+        .hero-dot.yellow{ background-color: #febc2e; }
+        .hero-dot.green{ background-color: #28c840; }
+
+        .hero-content{
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text-block{ flex: 1 1 55%; }
+
+        .hero-kicker{
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-muted);
+            margin-bottom: 8px;
+        }
+
+        .hero-title{
+            margin: 0 0 10px;
+            font-size: 52px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+        }
+
+        .hero-subtitle{
+            margin: 0 0 18px;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .hero-description{
+            margin: 0 0 24px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--color-muted);
+            max-width: 36rem;
+        }
+
+        .hero-stars{
+            font-size: 26px;
+            color: #ffd447;
+            letter-spacing: 10px;
+            margin-bottom: 6px;
+        }
+
+        .hero-nav{
+            flex: 1 1 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 18px;
+        }
+
+        .hero-nav-title{
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-muted);
+        }
+
+        .hero-nav-buttons{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .hero-nav-buttons a{
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-size: 14px;
+            border: 1px solid rgba(0,0,0,0.08);
+            background-color: #fafafa;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .hero-nav-buttons a:hover{
+            background-color: var(--color-primary);
+            color: #fff;
+        }
+
+        main{ display: block; }
+
+        .section-label{
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-muted);
+            margin-bottom: 10px;
+        }
+
+        .section-heading{
+            font-size: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 16px;
+        }
+
+        .section-text{
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 40rem;
+        }
+
+        .project-meta{
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: var(--color-muted);
+            margin-bottom: 12px;
+        }
+
+        .project-meta span + span::before{
+            content: " • ";
+        }
+
+        .project-tools{
+            font-size: 13px;
+            color: var(--color-muted);
+            margin-top: 6px;
+        }
+
+        .project-tools span{
+            font-weight: 600;
+        }
+
+        .project-list{
+            margin: 14px 0 0;
+            padding-left: 18px;
+            font-size: 15px;
+            line-height: 1.6;
+            max-width: 36rem;
+        }
+
+        .text-dark,
+        .text-dark p,
+        .text-dark .section-label,
+        .text-dark .section-heading,
+        .text-dark .section-text,
+        .text-dark .project-meta,
+        .text-dark .project-tools,
+        .text-dark .project-list{
+            color: #000;
+        }
+
+        .text-light,
+        .text-light p,
+        .text-light .section-label,
+        .text-light .section-heading,
+        .text-light .section-text,
+        .text-light .project-meta,
+        .text-light .project-tools,
+        .text-light .project-list{
+            color: #fff;
+        }
+
+        /* TABLÓN */
+        .intro{
+            padding: 60px 0 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .intro img{
+            width: 86%;
+            max-width: 1500px;
+            height: auto;
+            display: block;
+            border-radius: 18px;
+        }
+
+        /* CARPETAS */
+        .folders-section{
+            padding: 40px 0 80px;
+        }
+
+        .folders-inner{
+            width: 86%;
+            max-width: 1500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .folder-card{
+            background: #fff;
+            border-radius: var(--radius-xxl);
+            box-shadow: var(--shadow-soft);
+            padding: 22px 34px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .folder-text{
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .folder-subtext{
+            font-size: 14px;
+            color: var(--color-muted);
+            margin-top: 4px;
+        }
+
+        .folder-images{
+            display: flex;
+            gap: 20px;
+        }
+
+        .folder-images img{
+            width: 120px;
+            height: auto;
+            display: block;
+        }
+
+        .folder-link{
+            border: none;
+            padding: 0;
+            background: none;
+        }
+
+        /* FONDO */
+        .image-section{
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 80px 0 100px;
+        }
+
+        .image-section-inner{
+            width: 100%;
+            max-width: 1920px;
+            position: relative;
+        }
+
+        .section-bg{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .section-content{
+            position: absolute;
+        }
+
+        /* AYINKO */
+        #branding-ayinko .section-content{
+            top: 26%;
+            left: 8%;
+            width: 28%;
+        }
+
+        /* DIVINE */
+        #branding-divine .section-content{
+            top: 28%;
+            right: 3%;
+            width: 30%;
+        }
+
+        /* SUBWAY */
+        #motion-subway .subway-content{
+            position: absolute;
+            top: 36%;
+            left: 8%;
+            right: 10%;
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .subway-text{ flex: 0 0 42%; margin-top: -70px; }
+
+        .subway-video,
+        .fuego-main{
+            flex: 0 0 40%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .subway-video video,
+        .fuego-main video{
+            width: 100%;
+            max-width: 520px;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            border-radius: 14px;
+            margin-top: 10px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* FUEGO */
+        #motion-fuego .fuego-content{
+            position: absolute;
+            top: 30%;
+            left: 8%;
+            right: 8%;
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .fuego-text{
+            flex: 0 0 38%;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-top: -100px;
+        }
+
+        /* PINTURA DIGITAL */
+        #arte-digital .section-content{
+            top: 20%;
+            right: 5%;
+            width: 30%;
+        }
+
+        .digital-painting-strip{
+            position: absolute;
+            bottom: 30%;
+            left: 9%;
+            width: 52%;
+            display: flex;
+            gap: 26px;
+        }
+
+        .digital-painting-item{
+            flex: 1 1 33%;
+            background-color: rgba(255,255,255,0.95);
+            border-radius: 14px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 3 / 4;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .digital-painting-item img{
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* GALERÍA AFICHES */
+        #afiches .section-content{
+            top: 24%;
+            left: 7%;
+            width: 86%;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .posters-grid{
+            flex: 0 0 55%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .poster-item{
+            background-color: rgba(0,0,0,0.45);
+            border-radius: 10px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .poster-trigger{
+            border: none;
+            padding: 0;
+            background: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .poster-item img{
+            width: 100%;
+            border-radius: 6px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .posters-text{ flex: 1; }
+
+        .posters-title{
+            font-size: 30px;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .posters-text .section-text{ font-size: 16px; }
+
+        /* MODAL AFICHES */
+        .poster-modal-overlay{
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            z-index: 999;
+        }
+
+        .poster-modal-overlay.is-visible{
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .poster-modal{
+            position: relative;
+            background: #fff;
+            max-width: 800px;
+            width: 92%;
+            max-height: 90vh;
+            border-radius: 18px;
+            box-shadow: var(--shadow-strong);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .poster-modal-close{
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            border: none;
+            background: rgba(0,0,0,0.06);
+            border-radius: 999px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .poster-modal-inner{ display: flex; flex-direction: column; gap: 8px; }
+
+        #poster-modal-title{
+            font-size: 20px;
+            margin: 0;
+        }
+
+        #poster-modal-meta{
+            margin: 0;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: var(--color-muted);
+        }
+
+        .poster-modal-image{
+            width: 100%;
+            max-height: 90vh;
+            border-radius: 14px;
+            background: #fff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .poster-modal-image img{
+            max-width: 50%;
+            max-height: 50%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* NAV DE PUNTOS */
+        .dot-nav{
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 1000;
+        }
+
+        .dot-nav-list{
+            list-style: none;
+            margin: 0;
+            padding: 8px 10px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.9);
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .dot-nav a{
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            border: 1px solid var(--color-muted);
+            background: transparent;
+            display: block;
+        }
+
+        .dot-nav a:hover{
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        /* FOOTER */
+        footer{
+            background-color: var(--color-primary);
+            padding: 40px 20px 60px;
+            color: #fff;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p{
+            margin: 4px 0;
+            font-size: 15px;
+        }
+
+        .back-to-top{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.3);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .back-to-top:hover{
+            background-color: #fff;
+            color: var(--color-primary);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px){
+            header.hero{
+                padding: 40px 0 60px;
+            }
+
+            .hero-window{
+                width: 94%;
+                padding: 40px 20px 30px;
+            }
+
+            .hero-content{
+                margin-top: 30px;
+                flex-direction: column;
+                gap: 26px;
+            }
+
+            .hero-title{
+                font-size: 30px;
+                letter-spacing: 2px;
+            }
+
+            .hero-subtitle{ font-size: 16px; }
+            .hero-description{ font-size: 14px; }
+
+            .intro{
+                padding: 40px 0 30px;
+            }
+
+            .intro img{
+                width: 94%;
+                border-radius: 14px;
+            }
+
+            .folders-inner{
+                width: 92%;
+            }
+
+            .folder-card{
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+                border-radius: 40px;
+            }
+
+            .folder-images img{
+                width: 100px;
+            }
+
+            .image-section{
+                margin: 50px 0 60px;
+            }
+
+            .image-section-inner{
+                padding-bottom: 30px;
+            }
+
+            /* Branding */
+            #branding-ayinko .section-content,
+            #branding-divine .section-content{
+                position: static;
+                width: 88%;
+                margin: 20px auto 30px;
+            }
+
+            /* Motion */
+            #motion-subway .subway-content,
+            #motion-fuego .fuego-content{
+                position: static;
+                width: 88%;
+                margin: 20px auto 30px;
+                flex-direction: column;
+            }
+
+            .subway-video,
+            .fuego-main{
+                order: -1;
+            }
+
+            /* Arte digital */
+            #arte-digital .section-content{
+                position: static;
+                width: 88%;
+                margin: 20px auto;
+            }
+
+            .digital-painting-strip{
+                position: static;
+                width: 88%;
+                margin: 16px auto 30px;
+                flex-wrap: wrap;
+            }
+
+            /* Afiches */
+            #afiches .section-content{
+                position: static;
+                width: 88%;
+                margin: 20px auto 40px;
+                flex-direction: column;
+            }
+
+            .posters-grid{
+                width: 100%;
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .section-text{
+                font-size: 15px;
+            }
+
+            .dot-nav{
+                right: 14px;
+                bottom: 18px;
+            }
+
+            .dot-nav-list{
+                padding: 6px 8px;
+            }
+
+            .poster-modal{
+                padding: 14px 12px 12px;
+            }
+
+            #poster-modal-title{
+                font-size: 18px;
+            }
+
+            #poster-modal-meta{
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- PORTADA -->
+    <header class="hero" id="top">
+        <div class="hero-window">
+            <div class="hero-bar" aria-hidden="true">
+                <span class="hero-dot red"></span>
+                <span class="hero-dot yellow"></span>
+                <span class="hero-dot green"></span>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-text-block">
+                    <p class="hero-kicker">Portafolio web 2025</p>
+                    <h1 class="hero-title">Vicente Lizana</h1>
+                    <p class="hero-subtitle">Diseñador gráfico · Branding, packaging &amp; motion</p>
+                    <p class="hero-description">
+                        Soy diseñador en formación con enfoque en identidad visual, diseño de envases, animación y exploración digital.
+                        Me interesa construir marcas con carácter, cuidar el detalle gráfico y pensar cada pieza desde el concepto.
+                    </p>
+                    <div class="hero-stars" aria-hidden="true">★ ★ ★ ★ ★</div>
+                </div>
+
+                <nav class="hero-nav" aria-label="Navegación principal de portafolio">
+                    <p class="hero-nav-title">Explorar proyectos</p>
+                    <div class="hero-nav-buttons">
+                        <a href="#branding">Branding &amp; packaging</a>
+                        <a href="#motion">Animación &amp; motion</a>
+                        <a href="#arte-digital">Arte &amp; exploración digital</a>
+                        <a href="#afiches">Galería de afiches</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- TABLÓN -->
+        <section class="intro" aria-label="Presentación">
+            <img src="carpeta imagenes y videos/tablon.png"
+                 alt="Collage de trabajos de Vicente Acevedo en un tablón de inspiración"
+                 loading="lazy">
+        </section>
+
+        <!-- CARPETAS -->
+        <section class="folders-section" aria-label="Secciones del portafolio">
+            <div class="folders-inner">
+
+                <!-- BRANDING -->
+                <div class="folder-card">
+                    <div>
+                        <div class="folder-text">Branding &amp; Packaging</div>
+                        <div class="folder-subtext">
+                            Identidad visual, diseño de logotipos, etiquetas y envases.
+                        </div>
+                    </div>
+                    <div class="folder-images" aria-label="Accesos directos a proyectos de branding">
+                        <button class="folder-link" type="button" aria-label="Proyecto Ayinko (decorativo)">
+                            <img src="carpeta imagenes y videos/carpeta-celeste.png"
+                                 alt="Carpeta azul para proyectos de branding"
+                                 loading="lazy">
+                        </button>
+                        <button class="folder-link" type="button" aria-label="Proyecto Divine (decorativo)">
+                            <img src="carpeta imagenes y videos/carpeta-amarilla.png"
+                                 alt="Carpeta amarilla para proyectos de packaging"
+                                 loading="lazy">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- MOTION -->
+                <div class="folder-card">
+                    <div>
+                        <div class="folder-text">Animación &amp; Motion</div>
+                        <div class="folder-subtext">
+                            Piezas animadas, motion graphics y proyectos conceptuales.
+                        </div>
+                    </div>
+                    <div class="folder-images" aria-label="Accesos directos a proyectos de animación">
+                        <button class="folder-link" type="button" aria-label="Proyecto Subway x Adventure Time (decorativo)">
+                            <img src="carpeta imagenes y videos/carpeta-verde.png"
+                                 alt="Carpeta verde para proyecto Subway x Adventure Time"
+                                 loading="lazy">
+                        </button>
+                        <button class="folder-link" type="button" aria-label="Proyecto Fuego (decorativo)">
+                            <img src="carpeta imagenes y videos/carpeta-roja.png"
+                                 alt="Carpeta roja para proyecto Fuego"
+                                 loading="lazy">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ARTE DIGITAL -->
+                <div class="folder-card">
+                    <div>
+                        <div class="folder-text">Arte &amp; exploración digital</div>
+                        <div class="folder-subtext">
+                            Pintura digital, ilustración y afiches para proyectos personales.
+                        </div>
+                    </div>
+                    <div class="folder-images" aria-label="Accesos directos a arte digital y afiches">
+                        <button class="folder-link" type="button" aria-label="Proyecto de pintura digital (decorativo)">
+                            <img src="carpeta imagenes y videos/carpeta-morada.png"
+                                 alt="Carpeta morada para pintura digital"
+                                 loading="lazy">
+                        </button>
+                        <button class="folder-link" type="button" aria-label="Galería de afiches (decorativo)">
+                            <img src="carpeta imagenes y videos/carpeta-negra.png"
+                                 alt="Carpeta negra para galería de afiches"
+                                 loading="lazy">
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BRANDING & PACKAGING -->
+        <section id="branding" aria-label="Proyectos de branding y packaging">
+
+            <!-- AYINKO -->
+            <section class="image-section text-dark" id="branding-ayinko">
+                <div class="image-section-inner">
+                    <img class="section-bg"
+                         src="carpeta imagenes y videos/fondo1.png"
+                         alt="Mockups de latas de cerveza artesanal Ayinko"
+                         loading="lazy">
+                    <div class="section-content">
+                        <p class="section-label">Branding &amp; packaging</p>
+                        <h2 class="section-heading">Ayinko · Cerveza artesanal</h2>
+                        <p class="project-meta">
+                            <span>Branding completo</span>
+                            <span>Packaging</span>
+                            <span>2024</span>
+                        </p>
+                        <p class="section-text">
+                            Ayinko es una marca de cerveza artesanal inspirada en la identidad y los paisajes del sur de Chile.
+                            Para este proyecto desarrollé la identidad visual completa de la marca, incluyendo logotipo, paleta cromática,
+                            ilustración principal y diseño de las latas.
+                        </p>
+                        <ul class="project-list">
+                            <li>Construcción de un lenguaje visual artesanal, rústico y cercano, pero con una estética limpia y contemporánea.</li>
+                            <li>Composición de cada envase para diferenciar sabores a través del color, textura de madera y elementos gráficos.</li>
+                        </ul>
+                        <p class="project-tools">
+                            <span>Herramientas:</span> Adobe Illustrator · Adobe Photoshop
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRUFAS DIVINE -->
+            <section class="image-section text-dark" id="branding-divine">
+                <div class="image-section-inner">
+                    <img class="section-bg"
+                         src="carpeta imagenes y videos/fondo2.png"
+                         alt="Packaging de trufas Divine con envase en forma de pirámide"
+                         loading="lazy">
+                    <div class="section-content">
+                        <p class="section-label">Branding &amp; packaging</p>
+                        <h2 class="section-heading">Divine · Trufas gourmet</h2>
+                        <p class="project-meta">
+                            <span>Concepto de marca</span>
+                            <span>Diseño estructural y gráfico</span>
+                            <span>2024</span>
+                        </p>
+                        <p class="section-text">
+                            Divine es un proyecto de packaging para una línea de trufas gourmet inspirado en el mundo egipcio y la idea de lo sagrado.
+                            A partir de esta referencia desarrollé el logotipo y un sistema visual con formas geométricas, jerarquía clara y una estética
+                            que remite a lo místico y a lo precioso.
+                        </p>
+                        <ul class="project-list">
+                            <li>Envase principal en forma de pirámide, transformando el packaging en un objeto llamativo y coleccionable.</li>
+                            <li>Experiencia de apertura pensada como un pequeño ritual que refuerza el concepto de tesoro.</li>
+                            <li>Paleta cálida y detalles gráficos que acompañan al logo sin recargar la pieza, manteniendo legibilidad y orden.</li>
+                        </ul>
+                        <p class="project-tools">
+                            <span>Herramientas:</span> Adobe Illustrator · Adobe Photoshop
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- ANIMACIÓN & MOTION -->
+        <section id="motion" aria-label="Proyectos de animación y motion graphics">
+
+            <!-- SUBWAY X ADVENTURE TIME -->
+            <section class="image-section text-dark" id="motion-subway">
+                <div class="image-section-inner">
+                    <img class="section-bg"
+                         src="carpeta imagenes y videos/fondo3.png"
+                         alt="Composición con personajes de Adventure Time y gráficos de Subway"
+                         loading="lazy">
+                    <div class="subway-content">
+                        <div class="subway-text">
+                            <p class="section-label">Animación &amp; motion</p>
+                            <h2 class="section-heading">Subway x Adventure Time</h2>
+                            <p class="project-meta">
+                                <span>Animación promocional</span>
+                                <span>Fan project</span>
+                                <span>2024</span>
+                            </p>
+                            <p class="section-text">
+                                Este proyecto explora una colaboración imaginaria entre “Adventure Time” y Subway a través de una pieza animada
+                                pensada para redes sociales. El objetivo fue crear una animación fresca, divertida y dirigida a un público joven.
+                            </p>
+                            <ul class="project-list">
+                                <li>Integración de la paleta vibrante y los personajes icónicos de la serie con la identidad de Subway.</li>
+                                <li>Uso de movimiento, ritmo y humor para generar recordación de campaña en formatos cortos.</li>
+                                <li>Composición adaptable a formatos verticales y cuadrado, pensada para Instagram y TikTok.</li>
+                            </ul>
+                            <p class="project-tools">
+                                <span>Herramientas:</span> Adobe After Effects · Adobe Illustrator
+                            </p>
+                        </div>
+                        <div class="subway-video">
+                            <video src="carpeta imagenes y videos/video1.mp4"
+                                   controls
+                                   aria-label="Animación Subway x Adventure Time"></video>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FUEGO -->
+            <section class="image-section text-light" id="motion-fuego">
+                <div class="image-section-inner">
+                    <img class="section-bg"
+                         src="carpeta imagenes y videos/fondo4.png"
+                         alt="Escena de la animación Fuego con figura humana rodeada de formas cálidas"
+                         loading="lazy">
+                    <div class="fuego-content">
+                        <div class="fuego-text">
+                            <p class="section-label">Animación conceptual</p>
+                            <h2 class="section-heading">Fuego</h2>
+                            <p class="project-meta">
+                                <span>Proyecto de datos personales</span>
+                                <span>Animación experimental</span>
+                            </p>
+                            <p>
+                                Este proyecto comenzó a partir de un proceso de recopilación y análisis de datos personales, donde registré rutinas,
+                                sensaciones y momentos cotidianos. A partir de esos datos desarrollé una narrativa visual que representara la acumulación
+                                emocional y la intensidad de ciertos patrones registrados.
+                            </p>
+                            <p>
+                                “Fuego” transforma esos datos en una animación conceptual, donde una figura anónima es envuelta por un entorno en movimiento
+                                constante. Utilicé colores cálidos, formas orgánicas y transiciones fluidas para simbolizar cómo los estímulos del día a día
+                                pueden generar tensión, desgaste o explosión emocional.
+                            </p>
+                            <p class="project-tools">
+                                <span>Herramientas:</span> Adobe After Effects · Adobe Photoshop
+                            </p>
+                        </div>
+                        <div class="fuego-main">
+                            <video src="carpeta imagenes y videos/video2.mp4"
+                                   controls
+                                   aria-label="Animación Fuego"></video>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- ARTE & EXPLORACIÓN DIGITAL -->
+        <section class="image-section text-light" id="arte-digital" aria-label="Proyecto de pintura digital">
+            <div class="image-section-inner">
+                <img class="section-bg"
+                     src="carpeta imagenes y videos/fondo5.png"
+                     alt="Fondo azul oscuro con texturas para proyecto de pintura digital"
+                     loading="lazy">
+
+                <!-- cuadros a la izquierda -->
+                <div class="digital-painting-strip">
+                    <div class="digital-painting-item">
+                        <img src="carpeta imagenes y videos/cuadro1.png"
+                             alt="Pintura digital de Cheetara en tonos cálidos"
+                             loading="lazy">
+                    </div>
+                    <div class="digital-painting-item">
+                        <img src="carpeta imagenes y videos/cuadro2.jpg"
+                             alt="Detalle de pinceladas y textura de la pintura digital"
+                             loading="lazy">
+                    </div>
+                    <div class="digital-painting-item">
+                        <img src="carpeta imagenes y videos/cuadro3.jpg"
+                             alt="Pintura digital impresa sobre fototela"
+                             loading="lazy">
+                    </div>
+                </div>
+
+                <!-- texto a la derecha -->
+                <div class="section-content">
+                    <p class="section-label">Arte &amp; exploración digital</p>
+                    <h2 class="section-heading">Pintura digital · Cheetara</h2>
+                    <p class="project-meta">
+                        <span>Ilustración digital</span>
+                        <span>Impresión en fototela</span>
+                    </p>
+                    <p class="section-text">
+                        Este proyecto de pintura digital se basa en una fotografía personal de mi gata, Cheetara. A partir de esa imagen
+                        desarrollé una reinterpretación artística utilizando pinceles digitales en Photoshop, explorando luz, textura y volumen
+                        para darle un carácter más pictórico.
+                    </p>
+                    <p class="section-text">
+                        La obra final fue impresa sobre fototela, creando un puente entre lo análogo y lo digital. Esta decisión buscó resaltar
+                        la materialidad de la pintura, otorgándole presencia física sin perder su origen ilustrado y permitiendo que la pieza
+                        funcione tanto en contexto doméstico como expositivo.
+                    </p>
+                    <p class="project-tools">
+                        <span>Herramientas:</span> Adobe Photoshop · Pintura digital · Impresión en fototela
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA DE AFICHES -->
+        <section class="image-section text-light" id="afiches" aria-label="Galería de afiches">
+            <div class="image-section-inner">
+                <img class="section-bg"
+                     src="carpeta imagenes y videos/fondo6.png"
+                     alt="Fondo oscuro para galería de afiches"
+                     loading="lazy">
+                <div class="section-content">
+                    <div class="posters-grid">
+                        <div class="poster-item">
+                            <button class="poster-trigger" type="button" data-poster="1">
+                                <img src="carpeta imagenes y videos/afiche1.png"
+                                     alt="Afiche conceptual con plantas carnívoras y ojos"
+                                     loading="lazy">
+                            </button>
+                        </div>
+                        <div class="poster-item">
+                            <button class="poster-trigger" type="button" data-poster="2">
+                                <img src="carpeta imagenes y videos/afiche2.png"
+                                     alt="Afiche inspirado en estética teen-horror"
+                                     loading="lazy">
+                            </button>
+                        </div>
+                        <div class="poster-item">
+                            <button class="poster-trigger" type="button" data-poster="3">
+                                <img src="carpeta imagenes y videos/afiche3.jpg"
+                                     alt="Afiche conceptual para reestreno de Catwoman"
+                                     loading="lazy">
+                            </button>
+                        </div>
+                        <div class="poster-item">
+                            <button class="poster-trigger" type="button" data-poster="4">
+                                <img src="carpeta imagenes y videos/afiche4.png"
+                                     alt="Apropiación de Van Gogh en estilo pixel art"
+                                     loading="lazy">
+                            </button>
+                        </div>
+                        <div class="poster-item">
+                            <button class="poster-trigger" type="button" data-poster="5">
+                                <img src="carpeta imagenes y videos/afiche5.png"
+                                     alt="Segundo afiche conceptual sobre la sensación de ser observado"
+                                     loading="lazy">
+                            </button>
+                        </div>
+                        <div class="poster-item">
+                            <button class="poster-trigger" type="button" data-poster="6">
+                                <img src="carpeta imagenes y videos/afiche6.png"
+                                     alt="Afiches alternativos con guiños a Jennifer's Body"
+                                     loading="lazy">
+                            </button>
+                        </div>
+                        <div class="poster-item">
+                            <button class="poster-trigger" type="button" data-poster="7">
+                                <img src="carpeta imagenes y videos/afiche7.png"
+                                     alt="Afiche tipográfico basado en una canción de Charli y Ariana Grande"
+                                     loading="lazy">
+                            </button>
+                        </div>
+                        <div class="poster-item">
+                            <button class="poster-trigger" type="button" data-poster="8">
+                                <img src="carpeta imagenes y videos/afiche8.png"
+                                     alt="Afiche para campaña de estreno de El laberinto del fauno"
+                                     loading="lazy">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="posters-text">
+                        <p class="section-label">Colección personal</p>
+                        <h2 class="posters-title">Galería de afiches</h2>
+                        <p class="section-text">
+                            Esta colección reúne afiches con temáticas y estilos diversos, donde cada uno aborda un concepto distinto a través del color,
+                            la forma y la composición. Aunque varían en técnica y enfoque visual, todos comparten un mismo proceso creativo: la búsqueda
+                            de una idea central clara, su traducción al lenguaje visual y una ejecución que equilibra estética y mensaje.
+                        </p>
+                        <p class="section-text">
+                            Son trabajos ficticios, desarrollados como ejercicios de exploración gráfica y conceptual. Me permitieron experimentar con
+                            géneros distintos (horror, cine de superhéroes, fantasía, música pop), probar tratamientos tipográficos y jugar con recursos
+                            de ilustración, textura y composición sin las limitaciones de un cliente real.
+                        </p>
+                        <p class="project-tools">
+                            <span>Herramientas:</span> Adobe Illustrator · Adobe Photoshop · Experimentación tipográfica
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL PARA AFICHES (título + año + herramientas + imagen) -->
+    <div class="poster-modal-overlay" id="poster-modal" aria-hidden="true">
+        <div class="poster-modal" role="dialog" aria-modal="true" aria-labelledby="poster-modal-title">
+            <button class="poster-modal-close" type="button" aria-label="Cerrar afiche ampliado">×</button>
+            <div class="poster-modal-inner">
+                <div class="poster-modal-header">
+                    <h2 class="posters-title" id="poster-modal-title"></h2>
+                    <p id="poster-modal-meta"></p>
+                </div>
+                <div class="poster-modal-image">
+                    <img id="poster-modal-img" src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAV FIJO DE PUNTITOS ENTRE PROYECTOS -->
+    <nav class="dot-nav" aria-label="Atajos entre proyectos">
+        <ul class="dot-nav-list">
+            <li><a href="#branding-ayinko" aria-label="Ir a Ayinko"></a></li>
+            <li><a href="#branding-divine" aria-label="Ir a Divine"></a></li>
+            <li><a href="#motion-subway" aria-label="Ir a Subway x Adventure Time"></a></li>
+            <li><a href="#motion-fuego" aria-label="Ir a Fuego"></a></li>
+            <li><a href="#arte-digital" aria-label="Ir a Pintura digital"></a></li>
+            <li><a href="#afiches" aria-label="Ir a Galería de afiches"></a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTACTO / FOOTER -->
+    <footer id="contacto">
+        <p>Vicente A. Lizana · Portafolio Web 2025</p>
+        <p>Instagram: @vxndress · Correo: vicente.acevedo@uniacc.edu</p>
+        <a class="back-to-top" href="#top" aria-label="Volver al inicio de la página">
+            ↑ Volver arriba
+        </a>
+    </footer>
+
+</div>
+
+<script>
+    // Datos simples de los afiches: título, año y herramientas
+    const posters = {
+        1: { title: "Afiche 1 · Plantas Krnivoras", year: "2024", tools: "Adobe Illustrator · Adobe Photoshop" },
+        2: { title: "Afiche 2 · Alternativa gráfica a Jennifer's Body", year: "2024", tools: "Adobe Illustrator · Adobe Photoshop" },
+        3: { title: "Afiche 3 · Reestreno de Catwoman (2004)", year: "2025", tools: "Adobe Illustrator" },
+        4: { title: "Afiche 4 · Van Gogh en pixel", year: "2024", tools: "Adobe Illustrator" },
+        5: { title: "Afiche 5 · Q de flores", year: "2024", tools: "Adobe Illustrator · Adobe Photoshop" },
+        6: { title: "Afiche 6 · Alternativa gráfica a Jennifer's Body", year: "2024", tools: "Adobe Illustrator · Adobe Photoshop" },
+        7: { title: "Afiche 7 · Charli XCX & Ariana Grande / sympathy is a knife · Afiche tipográfico", year: "2024", tools: "Adobe Illustrator · Experimentación tipográfica" },
+        8: { title: "Afiche 8 · Campaña ficticia · El laberinto del fauno", year: "2025", tools: "Adobe Illustrator · Adobe Photoshop" }
+    };
+
+    const modalOverlay = document.getElementById('poster-modal');
+    const modalImg = document.getElementById('poster-modal-img');
+    const modalTitle = document.getElementById('poster-modal-title');
+    const modalMeta = document.getElementById('poster-modal-meta');
+    const modalCloseBtn = document.querySelector('.poster-modal-close');
+
+    // Abre el modal con la info del afiche seleccionado
+    function openPosterModal(id, src, alt){
+        const poster = posters[id];
+        if(!poster) return;
+
+        modalImg.src = src;
+        modalImg.alt = alt || poster.title;
+        modalTitle.textContent = poster.title;
+        modalMeta.textContent = poster.year + " · " + poster.tools;
+
+        modalOverlay.classList.add('is-visible');
+        modalOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Cierra el modal
+    function closePosterModal(){
+        modalOverlay.classList.remove('is-visible');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    // Miniaturas de afiches → abren modal
+    const posterButtons = document.getElementsByClassName('poster-trigger');
+    for(let i = 0; i < posterButtons.length; i++){
+        const btn = posterButtons[i];
+        const img = btn.querySelector('img');
+        const src = img ? img.getAttribute('src') : '';
+        const alt = img ? img.getAttribute('alt') : '';
+
+        btn.addEventListener('click', function(){
+            const id = btn.getAttribute('data-poster');
+            openPosterModal(id, src, alt);
+        });
+    }
+
+    modalCloseBtn.addEventListener('click', closePosterModal);
+
+    modalOverlay.addEventListener('click', function(e){
+        if(e.target === modalOverlay){
+            closePosterModal();
+        }
+    });
+
+</script>
+</body>
+</html>
